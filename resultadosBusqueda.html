@@ -1,0 +1,26 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">RESULTADOS DE LA BUSQUEDA</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>PRECIOS FILTRADOS</h1>
+{% if ropa %}
+
+<ul>
+    {% for ropa in ropa %}
+        <li>{{ropa.descripcion}}</li>
+        <li>{{ropa.precio}}</li>
+        <br>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>NO SE ENCONTRÓ ROPA</p>
+
+{% endif %}
+
+{% endblock %}
